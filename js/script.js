@@ -25,6 +25,9 @@ console.log(discount20, discount40);
 // Controllo dei dati inseriti dall'utente + regole prezzo
 if (isNaN(userAge) || isNaN(userKm)) {
     alert('Inserire valori numerici');
+    document.getElementById('km').innerText = 0 + ' km';
+    document.getElementById('age').innerText = 0 + ' anni';
+    document.getElementById('price').innerText = 0 + '€';
 } else {
     if (userAge >= 18 && userAge <= 65) {
         ticketPrice = ticketPrice;
@@ -34,12 +37,12 @@ if (isNaN(userAge) || isNaN(userKm)) {
     else if (userAge > 65) {
         ticketPrice = ticketPrice - discount40;
     }
+    // 4 - Stampare il risultato
+    document.getElementById('km').innerText = userKm + ' km';
+    document.getElementById('age').innerText = userAge + ' anni';
+    document.getElementById('price').innerText = ticketPrice.toFixed(2) + '€';
 }
 
-console.log(ticketPrice);
 
-// 4 - Stampare il risultato
-document.getElementById('km').innerText = userKm + ' km';
-document.getElementById('age').innerText = userAge + ' anni';
-document.getElementById('price').innerText = ticketPrice.toFixed(2) + '€';
+
 
